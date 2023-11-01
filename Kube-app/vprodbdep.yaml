@@ -35,10 +35,10 @@ spec:
             volumeID: vol-06959a30265fa7a29
             fsType: ext4
       initContainers:
-        - name: cleanup-data
-          image: busybox:latest
-          args: ["rm", "-rf", "/var/lib/mysql/*"]
-          volumeMounts:
-            - name: vpro-db-data
-              mountPath: /var/lib/mysql
+         - name: cleanup-data
+           image: busybox:latest
+           command: ["rm", "-rf", "/var/lib/mysql/*"]
+           volumeMounts:
+             - name: vpro-db-data
+               mountPath: /var/lib/mysql
 
